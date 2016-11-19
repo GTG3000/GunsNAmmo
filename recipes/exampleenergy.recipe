@@ -1,0 +1,11 @@
+{
+  "input" : [  
+    { "item" : "durasteelbar", "count" : 6 },
+    { "item" : "copperbar", "count" : 5 }
+  ],
+  "output" : {
+    "item" : "exampleenergy",
+    "count" : 1
+  },
+  "groups" : [ "GunsNAmmoCrafting", "pixelcompress", "all" ]
+}

@@ -1,0 +1,21 @@
+{
+	"input" : [	
+		{ 
+			"item" : "simplemagammo", 
+			"count" : 1,
+			"parameters" : {
+				"ammoCount" : 0
+			} 
+		},
+		{ "item" : "simplebulletammo", "count" : 10 }
+	],
+	"duration" : 1.5,
+	"output" : {
+		"item" : "simplemagammo",
+		"count" : 1,
+	"parameters" : {
+		"ammoCount" : 20
+	}
+	},
+	"groups" : [ "GunsNAmmoCrafting", "pixeldecompress", "all" ]
+}

@@ -1,0 +1,15 @@
+{
+  "input" : [  
+    { "item" : "ironbar", "count" : 2 },
+    { "item" : "logblock", "count" : 5 },
+	{ "item" : "plantfibre", "count" : 2}
+  ],
+  "output" : {
+    "item" : "examplecrossbow",
+    "count" : 1,
+	"parameters" : {
+		"level" : 10
+	}
+  },
+  "groups" : [ "GunsNAmmoCrafting", "pixelcompress", "all" ]
+}

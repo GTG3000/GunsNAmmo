@@ -1,0 +1,11 @@
+{
+  "input" : [  
+    { "item" : "woodenboltammo", "count" : 10 },
+    { "item" : "plantfibre", "count" : 1 }
+  ],
+  "output" : {
+    "item" : "piecemakerammo",
+    "count" : 1
+  },
+  "groups" : [ "GunsNAmmoCrafting", "pixeldecompress", "all" ]
+}

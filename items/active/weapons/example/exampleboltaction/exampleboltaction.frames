@@ -1,0 +1,10 @@
+{
+  "frameGrid" : {
+    "size" : [40, 9],
+    "dimensions" : [2, 2],
+    "names" : [
+      ["armed.1","reloading.1"],
+	  ["reloading.2","reloading.3"]
+    ]
+  }
+}

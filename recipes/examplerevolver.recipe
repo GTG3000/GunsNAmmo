@@ -1,0 +1,11 @@
+{
+  "input" : [  
+    { "item" : "ironbar", "count" : 3 },
+    { "item" : "logblock", "count" : 1 }
+  ],
+  "output" : {
+    "item" : "examplerevolver",
+    "count" : 1
+  },
+  "groups" : [ "GunsNAmmoCrafting", "pixelcompress", "all" ]
+}

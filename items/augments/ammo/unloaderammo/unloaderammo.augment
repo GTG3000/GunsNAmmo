@@ -1,0 +1,11 @@
+{
+  "itemName" : "unloaderammo",
+  "price" : 100,
+  "rarity" : "Common",
+  "category" : "other",
+  "inventoryIcon" : "icon.png",
+  "description" : "A tool for getting your ammo out of your gun.",
+  "shortdescription" : "Unloader",
+
+  "scripts" : [ "/items/augments/ammo/unloadammo.lua" ]
+}

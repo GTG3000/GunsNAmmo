@@ -1,0 +1,56 @@
+{
+  "objectName" : "examplecrafting",
+  "colonyTags" : ["combat"],
+  "printable" : false,
+  "rarity" : "Legendary",
+  "interactAction" : "OpenCraftingInterface",
+  "interactData" : {
+    "config" : "/interface/windowconfig/pixelcompressor.config",
+    "filter" : [ "GunsNAmmoCrafting" ],
+    "paneLayoutOverride" : {
+      "windowtitle" : {
+        "title" 	: "Example Gun Crafting",
+        "subtitle" 	: "Guns and ammo for all!",
+		"icon"		: {
+			"file"	: "/interface/gunicon.png"
+		}
+      },
+	  "lblBarTab"	: {
+		"file"	: "/interface/crafting/tabicon_weapons.png",
+		"position" : [25, 223]
+	  },
+	  "lblMatTab"	: {
+		"file"	: "/interface/crafting/tabicon_consumables.png",
+		"position" : [53, 223]
+	  }
+    }
+  },
+
+  "category" : "crafting",
+  "price" : 2400,
+
+  "description" : "Compress pixels for storage.",
+  "shortdescription" : "^orange;Pixel Compressor^white;",
+  "race" : "human",
+
+  "apexDescription" : "I can store pixels here.",
+  "avianDescription" : "A secure place to store my pixels.",
+  "floranDescription" : "Floran put shinies in sssafe place!",
+  "glitchDescription" : "Neutral. A pixel bank.",
+  "humanDescription" : "I wonder if this pixel bank has an overdraft function...",
+  "hylotlDescription" : "Saving pixels for the future is a good investment.",
+  "novakidDescription" : "A machine for storin' your golden squares. I sure hope it's safe...",
+
+  "inventoryIcon" : "icon.png",
+  "orientations" : [
+    {
+      "dualImage" : "examplecrafting.png:<color>.<frame>",
+      "imagePosition" : [-24, 0],
+      "frames" : 1,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+
+    }
+  ]
+}

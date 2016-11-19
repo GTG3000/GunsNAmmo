@@ -1,0 +1,163 @@
+{
+  "itemName" : "exampleboltaction",	//this is an example weapon. Copy the folder to your mod (in appropriate location) and change "exampleboltaction" for the name you want to use
+  "price" : 150,
+  "inventoryIcon" : "exampleboltaction.png:armed.1",
+  "maxStack" : 1,
+  "rarity" : "Common",
+  "description" : "Shoots Bullets. Bullets not included.",
+  "shortdescription" : "Example Bolt Action Rifle",
+  "level" : 6,
+  "tooltipKind" : "ammogun",//custom tooltip, values set by the .lua (the code is spread to gunammo.lua, ammo.lua and reloadammo.lua)
+  "category" : "uniqueWeapon",
+  "itemTags" : ["weapon","ranged","rifle"],
+  "twoHanded" : true,
+  
+  "ammoMax" 		: 10,			//Specifies how big the guns' magazine is.
+  "ammoAmount" 		: 0,			//Holds the current amount of ammo. Mostly set dynamically
+  "usesAmmo" 		: true,			//Used by ammo to determine if it should bother trying to load into the gun
+  "ammoTags" 		: ["bullet"],	//Tags, specifying the kind of ammo the gun takes
+  "ammoName" 		: "",			//Used by the tooltip, set by ammo
+  "ammoType" 		: "",			//Holds the name of currently used ammo item
+  "magazineType"	: false,		//Holds the name of currently used magazine item or false if not using magazines (can omit this). Set to "none" for making a gun without a mag in currently.
+  "ammoIcon" 		: "",			//Used by the tooltip, set by ammo	
+  "ammoCasing" 		: false,		//Used by the gunfireammo ability. False for no casings, name of the casing item otherwise. Supposed to be set by the ammo item.
+  "extraAmmo" 		: false,		//Used for ejecting ammo, set dynamically
+  "extraAmmoList" 	: [],			//Used for ejecting ammo, set dynamically
+  "reloadParam" 	: false,		//false for reloadammo secondary ejecting ammo, [reload_amount,reload_cost,cooldown] for reloadammo reloading the gun (eg, for reloading one bullet for 20 energy every 2 seconds it will look like [1,20,2])
+
+  "animation" : "/items/active/weapons/ranged/gun.animation",
+  "animationParts" : {
+    "butt" : "",
+    "middle" : "exampleboltaction.png",
+    "barrel" : "",
+    "muzzleFlash" : "/items/active/weapons/ranged/muzzleflash.png"
+  },
+  "animationCustom" : {
+	"animatedParts":{
+      "stateTypes" : {
+        "gunState" : {
+          "default" : "empty",
+          "states" : {					//animations are handled by both gunammo.lua (ammo states) and gunfireammo.lua (firing state). If you want to change those, make a copy and work with that.
+			"firing" :{					//gun will transition to "firing" state each time you pull the trigger
+			  "frames" : 1,
+			  "mode" : "transition",
+			  "transition" : "armed"	//transition mode and animation is set up for the crossbow. may not work for everything
+			},
+            "armed" : {					//gun transitions to "armed" state if it has ammo
+              "frames" : 1,
+			  "mode":"end"
+            },
+            "empty" : {					//gun transitions to "empty" if it has no ammo
+              "frames" : 1,
+			  "mode":"end"
+            },
+			"reloading" : {				//reloading animation, placeholder here but can be useful if reloadejects is set to false
+			  "frames" : 3,
+			  "cycle" : 0.25,
+			  "mode" : "transition",
+			  "transition" : "armed"
+			}
+          }
+        }
+      },
+
+      "parts" : {
+        "middle" : {
+          "properties" : {
+            "image" : null
+          },
+
+          "partStates" : {
+            "gunState" : {
+			  "firing" : {
+				"properties" : {
+				  "image" : "<partImage>:armed.<frame><paletteSwaps>"
+				}
+			  },
+              "armed" : {
+                "properties" : {
+                  "image" : "<partImage>:armed.<frame><paletteSwaps>"
+                }
+              },
+              "empty" : {
+                "properties" : {
+                  "image" : "<partImage>:armed.<frame><paletteSwaps>"
+                }
+              },
+			  "reloading" : {
+			    "properties" : {
+				  "image" : "<partImage>:reloading.<frame><paletteSwaps>"
+				}
+			  }
+            }
+          }
+        }
+      }
+	},
+    "sounds" : {
+      "fire" 		: [ "/sfx/gun/ar1.ogg" ],
+	  "empty"		: [ "/sfx/gun/reload/machinepistol_reload_clip1.ogg" ],
+      "switchAmmo" 	: [ "/sfx/gun/reload/shotgun_reload_clip3.ogg" ]
+    }
+  },
+
+  "baseOffset" : [1.1, 0.15],
+  "muzzleOffset" : [2.7, 0.125],
+
+  "scripts" : ["/items/active/weapons/ranged/gunammo.lua"],
+
+  "elementalType" : "physical",
+
+  "primaryAbility" : {
+    "scripts" : ["/items/active/weapons/ranged/gunfireammo.lua"],
+    "class" : "GunFire",
+
+    "fireTime" : 0.5,
+    "baseDps" : 25,
+	"bonusDps" : 0,					//the parameter responsible for extra per-shot damage, introduced by ammo. Per shot damage gets spread over all the projectiles
+    "energyUsage" : false,
+    "inaccuracy" : 0.02,
+
+    "projectileCount" : 1,
+    "fireType" : "bolt",//bolt action REQUIRES the recockbolt secondary ability to function
+	//"burstCount" : 3,
+	//"burstTime"	: 0.25,
+
+    "projectileType" : "woodenbolt",
+    "projectileParameters" : {
+      "knockback" : 5
+    },
+    "stances" : {
+      "idle" : {
+        "armRotation" : 0,
+        "weaponRotation" : 0,
+        "twoHanded" : true,
+  
+        "allowRotate" : true,
+        "allowFlip" : true
+      },
+      "fire" : {
+        "duration" : 0,
+        "armRotation" : 3,
+        "weaponRotation" : 3,
+        "twoHanded" : true,
+  
+        "allowRotate" : false,
+        "allowFlip" : false
+      },
+      "cooldown" : {
+        "duration" : 0.1,
+        "armRotation" : 3,
+        "weaponRotation" : 3,
+        "twoHanded" : true,
+  
+        "allowRotate" : false,
+        "allowFlip" : false
+      }
+    }
+  },
+
+  "altAbilityType" : "recockbolt",		//the alt ability that handles reloading/ejecting
+  
+  "builder" : "/items/buildscripts/buildunrandweapon.lua"
+}

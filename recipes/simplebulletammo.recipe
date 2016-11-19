@@ -1,0 +1,13 @@
+{
+  "input" : [  
+    { "item" : "simplecasing", "count" : 10 },
+    { "item" : "ironbar", "count" : 1 },
+	{ "item" : "volatilepowder", "count" : 2}
+	
+  ],
+  "output" : {
+    "item" : "simplebulletammo",
+    "count" : 10
+  },
+  "groups" : [ "GunsNAmmoCrafting", "pixeldecompress", "all" ]
+}

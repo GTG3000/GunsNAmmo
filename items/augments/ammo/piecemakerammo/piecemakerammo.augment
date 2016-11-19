@@ -1,0 +1,21 @@
+{
+  "itemName" : "piecemakerammo",
+  "price" : 50,
+  "rarity" : "Common",
+  "tooltipKind" : "ammoitem",
+  "category" : "other",
+  "inventoryIcon" : "icon.png",
+  "description" : "A whole bundle of bolts. For maximum poking.",
+  "shortdescription" : "Piecemaker Bolt",
+
+  "ammoType" : "piecemakerammo",
+  "ammoTag"  : "bolt",
+  "ammoName" : "Piecemaker Load",
+  "ammoIcon" : "/items/augments/ammo/piecemakerammo/icon.png",
+  "ammoProjectile" : "woodenbolt",
+  "ammoProjectileCount" : 10,
+  "ammoCount" : 1,
+  "ammoDamage" : 5,
+
+  "scripts" : [ "/items/augments/ammo/ammo.lua" ]
+}
