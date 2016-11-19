@@ -1,28 +1,28 @@
 # GunsNAmmo
-A mod resource for starbound, offering functionality for guns that use actual crafted ammo
+A mod resource for starbound, offering functionality for guns that use actual crafted ammo.
 
 This mod aims to provide everyone with ability to add ammo-using guns into their mods.
 
-Inside this git, you will find:
+Inside this repo, you will find:
 
 ##Items
 
 ###Active/Weapons
 
-This folder includes the custom .lua files that enable the ammo functionality, and some example weapons to demonstrate the functionality.
+This folder includes the custom .lua files that enable the ammo functionality, and some example weapons to demonstrate that functionality.
 
-Following lua are modified:
+The following lua are modified:
 
 * weaponammo.lua
 * ranged/gunammo.lua
 * ranged/gunfireammo.lua
 
-Following abilities are added:
+The following abilities are added:
 
 * ranged/abilities/reloadammo
 * randeg/abilities/recockbolt
 
-Following examples are provided:
+The following examples are provided:
 
 * examplecrossbow
 * examplerifle
