@@ -1,9 +1,9 @@
 # GunsNAmmo
 A mod resource for starbound, offering functionality for guns that use actual crafted ammo.
 
-This mod aims to provide everyone with ability to add ammo-using guns into their mods.
+This mod aims to provide everyone with ability to add ammo-using guns into their own mods.
 
-Inside this repo, you will find:
+In this repo, you will find:
 
 ##Items
 
@@ -11,7 +11,7 @@ Inside this repo, you will find:
 
 This folder includes the custom .lua files that enable the ammo functionality, and some example weapons to demonstrate that functionality.
 
-The following lua are modified:
+The following lua scripts are modified:
 
 * weaponammo.lua
 * ranged/gunammo.lua
@@ -32,7 +32,7 @@ The following examples are provided:
 
 ###Augments/Ammo
 
-This folder includes the ammo.lua that provides the functionality, and the example ammo items.
+This folder includes the ammo.lua script that provides the ammo functionality, and some example ammo items.
 
 ###Buildscripts
 
@@ -42,17 +42,17 @@ This folder contains a buildscript for magazine ammo items, initializing the amm
 
 This folder contains all the recipes for the example items, including a recipe for magazines that shows a way to use the item parameters.
 
-All the recipes are craftable in examplecrafting station by default. The examplecrafting station is not craftable, it's not intended to be used as anything more than a way to test the showcase and test the crafting part of the mod.
+All the recipes are craftable in examplecrafting station by default. The examplecrafting station is not craftable, it's not intended to be used as anything more than a way to showcase and test the crafting part of the mod.
 
 ## Interface
 
-The weapons and ammo items use customised tooltips, weapons more than ammo.
+The weapons and ammo items use customised tooltips, weapons are more complex than ammo.
 
 # How to utilise this mod
 
 ##First, add this mod to your mod. Two ways of doing that -
 
-#### Install the mod parallel and include it in your mods "requires" field in the .metadata file
+#### Install the mod in parallel and include it in your mods "requires" field in the .metadata file as a dependency
 
 ```JSON
 {
@@ -294,6 +294,6 @@ Inside an ammo file, you will find :
 
 More comments than there is actual config.
 
-Ammo uses same mechanics as the augments. Drag ammo at a gun and right click to load it into the gun. Guns that use magazines, require magazines. Guns that don't, can't use magazines. Magazines can be hand-loaded by first separating one magazine from the stack, then loading it with bullets same way you'd load bullets into a gun. Putting more than one kind of ammo into a gun makes the gun eject all the previous ammo.
+Ammo uses the same mechanics as augments. Drag ammo to a gun and right click to load it into the gun. Guns that use magazines, require magazines. Guns that don't, can't use magazines. Magazines can be hand-loaded by first separating one magazine from the stack, then loading it with bullets same way you'd load bullets into a gun. Putting more than one kind of ammo into a gun makes the gun eject all the previous ammo.
 
 Alternatively, there is the unloaderammo item available to poke ammo out of the guns, as well as the unloadammo secondary.
